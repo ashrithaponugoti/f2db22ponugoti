@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  - let biryani=[{bir_quantity:"Full",bir_cost:20,bir_ing:"Chicken"},{bir_quantity:"Single",bir_cost:10,bir_ing:"Mutton"},{bir_quantity:"Family pack",bir_cost:40,bir_ing:"Fish"}]
+  - let biryani=results
   div(class="container-fluid")
   div(class="row")
    each b,index in biryani

@@ -1,8 +1,21 @@
 var Biryani = require('../models/biryani');
 // List of all Biryanis
-exports.biryani_list = function(req, res) {
-res.send('NOT IMPLEMENTED: Biryani list');
-};
+exports.biryani_list = async function(req, res) {
+    try{
+    theBiryanis = await Biryani.find();
+    res.send(theBiryanis);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+    
+
+// List of all Biryanis
+// exports.biryani_list = function(req, res) {
+// res.send('NOT IMPLEMENTED: Biryani list');
+// };
 // for a specific Biryani.
 exports.biryani_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: Biryani detail: ' + req.params.id);
@@ -19,3 +32,4 @@ res.send('NOT IMPLEMENTED: Biryani delete DELETE ' + req.params.id);
 exports.biryani_update_put = function(req, res) {
 res.send('NOT IMPLEMENTED: Biryani update PUT' + req.params.id);
 };
+
