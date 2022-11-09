@@ -33,3 +33,16 @@ exports.biryani_update_put = function(req, res) {
 res.send('NOT IMPLEMENTED: Biryani update PUT' + req.params.id);
 };
 
+// VIEWS
+// Handle a show all view
+exports.biryani_view_all_Page = async function(req, res) {
+    try{
+    theBiryanis = await Biryani.find();
+    res.render('biryani', { title: 'Biryani Search Results', results: theBiryanis });
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+
