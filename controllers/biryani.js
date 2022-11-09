@@ -46,3 +46,24 @@ exports.biryani_view_all_Page = async function(req, res) {
     }
     };
 
+    // Handle Costume create on POST.
+exports.biryani_create_post = async function(req, res) {
+    console.log(req.body)
+    let document = new Biryani();
+    // We are looking for a body, since POST does not have query parameters.
+    // Even though bodies can be in many different formats, we will be picky
+    // and require that it be a json object
+
+    document.bir_quantity = req.body.bir_quantity;
+    document.bir_cost = req.body.bir_cost;
+    document.bir_ing = req.body.bir_ing;
+    try{
+    let result = await document.save();
+    res.send(result);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+
