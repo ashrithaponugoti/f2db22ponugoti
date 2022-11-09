@@ -21,9 +21,9 @@ exports.biryani_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: Biryani detail: ' + req.params.id);
 };
 // Handle Biryani create on POST.
-exports.biryani_create_post = function(req, res) {
-res.send('NOT IMPLEMENTED: Biryani create POST');
-};
+//exports.biryani_create_post = function(req, res) {
+//res.send('NOT IMPLEMENTED: Biryani create POST');
+//};
 // Handle Biryani delete form on DELETE.
 exports.biryani_delete = function(req, res) {
 res.send('NOT IMPLEMENTED: Biryani delete DELETE ' + req.params.id);
