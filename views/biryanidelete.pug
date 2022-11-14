@@ -1,0 +1,53 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+    - let biryaniid = toShow._id 
+    - let bir_quantity = toShow.bir_quantity
+    - let bir_cost = toShow.bir_cost
+    - let bir_ing = toShow.bir_ing 
+    - let actionid = "/resource/biryanis/" + biryaniid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row
+       div(class='biryaniAttr mr-3') Biryani ID is:
+       div #{biryaniid}
+      div.row
+       div(class='biryaniAttr mr-3') Biryani Quantity is:
+       div #{bir_quantity}
+      div.row
+       div(class='biryaniAttr mr-3') Biryani Cost is:
+       div #{bir_cost}
+      div.row
+       div(class='biryaniAttr mr-3') Biryani Ingredient is:
+       div #{bir_ing}
+ 
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the biryani collection 
+      window.location.href='/biryani' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'     
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/biryani' 
+        // TODO handle body 
+      }).catch((error) => { 
+        console.log(error);
+        alert("Delete failed " + error ) 
+      }); 
+    } 
