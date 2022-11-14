@@ -1,0 +1,20 @@
+extends layout
+block content
+ h1= title
+ - let biryaniid = toShow._id
+ - let bir_quantity = toShow.bir_quantity
+ - let bir_cost = toShow.bir_cost
+ - let bir_ing = toShow.bir_ing
+ div
+    div.row
+     div(class='biryaniAttr mr-3') Biryani ID is:
+     div #{biryaniid}
+    div.row
+     div(class='biryaniAttr mr-3') Biryani Quantity is:
+     div #{bir_quantity}
+    div.row
+     div(class='biryaniAttr mr-3') Biryani Cost is:
+     div #{bir_cost}
+    div.row
+     div(class='biryaniAttr mr-3') Biryani Ingredient is:
+     div #{bir_ing}
