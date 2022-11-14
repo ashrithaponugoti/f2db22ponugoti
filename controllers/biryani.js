@@ -129,13 +129,27 @@ exports.biryani_view_one_Page = async function (req, res) {
 // Handle building the view for creating a biryani.
 // No body, no in path parameter, no query.
 // Does not need to be async
-exports.biryani_create_Page = function(req, res) {
+exports.biryani_create_Page = function (req, res) {
     console.log("create view")
-    try{
-    res.render('biryanicreate', { title: 'Biryani Create'});
+    try {
+        res.render('biryanicreate', { title: 'Biryani Create' });
     }
-    catch(err){
-    res.status(500)
-    res.send(`{'error': '${err}'}`);
+    catch (err) {
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
     }
-    };
+};
+
+// Handle building the view for updating a costume.
+// query provides the id
+exports.biryani_update_Page = async function (req, res) {
+    console.log("update view for item " + req.query.id)
+    try {
+        let result = await Biryani.findById(req.query.id)
+        res.render('biryaniupdate', { title: 'Biryani Update', toShow: result });
+    }
+    catch (err) {
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
+    }
+};
