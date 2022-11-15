@@ -1,15 +1,15 @@
 extends layout
 block content
   h1= title
-  form(id='BiryaniForm', action="/resource/biryanis", method="POST")
+  form.biryaniStyle(id='BiryaniForm', action="/resource/biryanis", method="POST")
    div.form-group
-    label.biryaniAttr(for='bir_quantity') Biryani Quantity
+    label.biryaniStyle(for='bir_quantity') Biryani Quantity
     input#bir_quantity(type='text', name='bir_quantity')
    div.form-group
-    label.biryaniAttr(for='bir_cost') Biryani cost
+    label.biryaniStyle(for='bir_cost') Biryani cost
     input#bir_cost(type='number', name='bir_cost')
    div.form-group
-    label.biryaniAttr(for='bir_ing') Biryani ingredient
+    label.biryaniStyle(for='bir_ing') Biryani ingredient
     input#bir_ing(type='text', name='bir_ing')
    input(type="submit")
   script.

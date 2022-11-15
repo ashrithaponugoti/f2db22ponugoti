@@ -10,4 +10,13 @@ a {
 .biryaniAttr {
   background-color: aquamarine;
   width: 120px;
-  }
+}
+.biryaniStyle {
+  width: 150px;
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
+  text-shadow: 2px 2px 5px red;
+  background-color: blanchedalmond;
+}
+
