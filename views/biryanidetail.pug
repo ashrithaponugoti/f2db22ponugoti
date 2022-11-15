@@ -1,10 +1,13 @@
 extends layout
 block content
  h1= title
- - let biryaniid = toShow._id
- - let bir_quantity = toShow.bir_quantity
- - let bir_cost = toShow.bir_cost
- - let bir_ing = toShow.bir_ing
+ if (toShow == null) 
+    h2 No instance to update 
+ else
+  - let biryaniid = toShow._id
+  - let bir_quantity = toShow.bir_quantity
+  - let bir_cost = toShow.bir_cost
+  - let bir_ing = toShow.bir_ing
  div
     div.row
      div(class='biryaniAttr mr-3') Biryani ID is:
