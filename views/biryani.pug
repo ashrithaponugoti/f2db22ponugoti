@@ -8,7 +8,7 @@ block content
    each b in biryani
     - let destination = `dispatch(\"/biryani/update?id=${b._id}\")`
     div(class="row-sm-2" class="m-1") Item #{b.bir_quantity}, #{b.bir_cost}, #{b.bir_ing}
-    button.btn( class="btn-primary ml-1", onclick= destination) Update
+     button.btn( class="btn-primary ml-1", onclick= destination) Update
   script.
    function dispatch(path){
     window.location.href=path
