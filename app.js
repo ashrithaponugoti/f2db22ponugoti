@@ -20,8 +20,6 @@ passport.use(new LocalStrategy(
     });
   }))
 
-
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var birRouter = require('./routes/biryani');
@@ -109,7 +107,7 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-app.use('/account',Account);
+
 
 
 // catch 404 and forward to error handler
