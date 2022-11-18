@@ -18,7 +18,8 @@ passport.use(new LocalStrategy(
       }
       return done(null, user);
     });
-  }))
+  }
+  ));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
