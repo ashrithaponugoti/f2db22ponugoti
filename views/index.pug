@@ -1,16 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Hello everyone!
-  button(type="button", class="btn btn-primary btn-sm" , onclick="doBump()") Press me for the contents
-  div(id="bump") Bump the count
-  script.
-   var count=0;
-   var bump=1;
-   function doBump(){
-    count+=bump;
-    bump+=1;
-    document.getElementById("bump").innerHTML="Count "+count+" Bump "+bump;
-   }
-  a(href="biryani") Biryani page
+  if (!user)
+   a(href="/login") Login
+   br
+   a(href="/register") Register
+  if (user)
+   p You are currently logged in as #{user.username}
+   a(href="/biryani") Take me to biryanis
+   br
+   a(href="/logout") Logout
